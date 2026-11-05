@@ -362,7 +362,7 @@ def main():
 
 def fazenda():
     while True:
-        texto = "\033[1;32mThe mistery in the house\033[0m\n"
+        texto = "\033[1;32mThe mystery in the house\033[0m\n"
         jogar = "[(A) JOGAR]"
         sair = "[(S) SAIR ]"
         print(texto.center(50))
