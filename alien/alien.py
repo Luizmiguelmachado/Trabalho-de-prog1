@@ -17,13 +17,13 @@ def escrever(texto, tempo=TEMPO_PADRAO):
     cont = 0
     palavra = ""
     for i in range(len(texto)):
-        cont+=1
+        cont += 1
         palavra += texto[i]
-        if cont!=100 and (texto[i] == " " or i == len(texto)-1):
+        if cont != 100 and (texto[i] == " " or i == len(texto) - 1):
             newtexto += palavra
             palavra = ""
-        if cont==100:
-            newtexto += "\n"+palavra
+        if cont == 100:
+            newtexto += "\n" + palavra
             palavra = ""
             cont = 0
 
@@ -44,9 +44,10 @@ def segundo_andar():
     escrever("Bom, será que eu devo...", TEMPO_PADRAO)
     print("")
     print("1. Subir rapidamente.\n2. Subir devagar")
+    
     escolha = ""
     while True:
-        escolha = input("Escolha uma opção: ")
+        escolha = input("Escolha uma opção: ").strip()
         print("\n")
         
         if escolha == "1":
@@ -63,12 +64,12 @@ def segundo_andar():
             machucado = ""
             while True:
                 print("1. Desistir e tentar entrar pelo porão.\n2. Tentar subir novamente, desta vez devagar")
-                machucado = input("Escolha uma opção: ")
+                machucado = input("Escolha uma opção: ").strip()
                 print("\n")
                 
                 if machucado == "1":
                     porao()
-                    break
+                    return
                 elif machucado == "2":
                     escolha = "2"
                     break
@@ -91,6 +92,7 @@ def segundo_andar():
         if escolha not in ["1", "2"]:
             escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
             print("\n\n")
+
     if escolha == "2":
         print("\n")
         escrever("Do telhado, a criança consegue observar parte da propriedade.", TEMPO_PADRAO)
@@ -105,9 +107,19 @@ def segundo_andar():
         print("\n")
         escrever("Ele tenta entender o que está vendo, mas a distância dificulta a identificação.", TEMPO_PADRAO)
         print("\n")
-
-        #Continuar daquiii: Entrar imediatamente pela janela. Observar melhor a plantação. Tentar subir ainda mais para enxergar melhor.
-
+        
+        while True:
+            print("1. Entrar imediatamente pela janela.\n2. Observar melhor a plantação.")
+            op = input("Escolha uma opção: ").strip()
+            print("\n")
+            if op in ["1", "2"]:
+                escrever("A criança decide entrar na casa pela janela do segundo andar...", TEMPO_PADRAO)
+                print("\n")
+                entrar_novamente_na_casa()
+                break
+            else:
+                escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
+                print("\n\n")
 
 def observando_arredores():
     """Seção 7 - Opção de voltar a observar os arredores da casa."""
@@ -125,9 +137,7 @@ def observando_arredores():
         escolha = input("Escolha uma opção: ").strip()
         print("\n")
         if escolha == "1":
-            # Redirecionaria para a função segundo_andar() do jogo principal
-            escrever("A criança decide tentar subir pela calha...", TEMPO_PADRAO)
-            print("\n")
+            segundo_andar()
             break
         elif escolha == "2":
             porao()
@@ -294,7 +304,6 @@ def vasculhando_porao():
         print("\n")
 
         if escolha == "1" and not estantes_visitadas["1"]:
-            # Seção 12 - A primeira estante
             estantes_visitadas["1"] = True
             escrever("A criança se aproxima da primeira estante.", TEMPO_PADRAO)
             print("\n")
@@ -308,7 +317,6 @@ def vasculhando_porao():
             print("\n")
 
         elif escolha == "2" and not estantes_visitadas["2"]:
-            # Seção 13 - A segunda estante
             estantes_visitadas["2"] = True
             escrever("A criança se aproxima da segunda estante.", TEMPO_PADRAO)
             print("\n")
@@ -352,7 +360,6 @@ def vasculhando_porao():
             print("\n")
 
         elif escolha == "3" and not estantes_visitadas["3"]:
-            # Seção 14 - A terceira estante
             estantes_visitadas["3"] = True
             escrever("A criança decide continuar procurando.", TEMPO_PADRAO)
             print("\n")
@@ -374,8 +381,6 @@ def vasculhando_porao():
             print("\n")
             escrever("Nenhum outro som é ouvido.", TEMPO_PADRAO)
             print("\n")
-            
-            # Ao encontrar a chave, sai do loop e avança para abrir a porta
             entrar_novamente_na_casa()
             break
         else:
@@ -550,18 +555,6 @@ def convergencia_criatura():
             escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
             print("\n\n")
 
-# Para executar diretamente como módulo de teste
-if __name__ == "__main__":
-    porao()
-
-#tem que terminar essa parte
-def porao():
-    print("\n")
-    escrever("Você se aproxima da porta do porão e segura a maçaneta gelada de metal...", TEMPO_PADRAO)
-    print("\n")
-    escrever("[Conteúdo do porão em desenvolvimento...]", TEMPO_PADRAO)
-    print("\n")
-
 def voltando_para_casa_opcoes():
     escrever("“Será que devo...“\n", TEMPO_PADRAO)
     
@@ -590,7 +583,6 @@ def voltando_para_casa_opcoes():
             escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
             print("\n\n")
 
-    # Sequência após descurbrir que precisa procurar outra entrada
     escrever("A criança se afasta alguns passos para observar a casa.", TEMPO_PADRAO)
     print("\n")
     escrever("Ao olhar para cima, percebe que uma janela do segundo andar está aberta.", TEMPO_PADRAO)
@@ -603,7 +595,9 @@ def voltando_para_casa_opcoes():
     print("\n")
 
     while True:
-        caminhos = input("1. “Acho que devo tentar entrar pelo segundo andar.“\n2. “Devo tentar abrir a porta do porão.“\nEscolha: ").strip()
+        print("1. “Acho que devo tentar entrar pelo segundo andar.“\n2. “Devo tentar abrir a porta do porão.“")
+        caminhos = input("Escolha: ").strip()
+        print("\n")
         if caminhos == "1":
             segundo_andar()
             break
@@ -745,9 +739,9 @@ def lista_tarefas():
         escrever("Agora você pode relaxar e aproveitar o resto do dia na fazenda.", TEMPO_PADRAO)
         print("")
         escrever("Mas espera aí", TEMPO_PADRAO)
-        escrever("... ", 2)
+        escrever("... ", 0.5)
         print("")
-        escrever("Ele caminha até a sua casa. ")
+        escrever("Ele caminha até a sua casa. ", TEMPO_PADRAO)
         voltando_para_casa()
     else:
         print("\n\033[1mTarefas do dia:\033[0m")
@@ -791,13 +785,12 @@ def lista_tarefas():
 # --- FLUXO PRINCIPAL DO JOGO ---
 
 def main():
-    # O despertar
     escrever("É uma tarde comum em uma fazenda isolada no interior.", TEMPO_PADRAO)
     print("\n")
     escrever("Uma criança de 10 anos acorda dormindo na sala de sua casa. A televisão está ligada passando jornal, o horário dos desenhos já havia passado faz tempo. O apresentador parece estar histérico com alguma notícia alarmante, mas não é do seu interesse prestar atenção.", TEMPO_PADRAO)
     print("\n")
     escrever("Sua boca está seca, o controle está jogado no chão, mas ainda nauseado, começa a lembrar de alguma coisa que sua mãe havia pedido a ele", TEMPO_PADRAO)
-    escrever("...", 2)
+    escrever("...", 0.5)
     print("")
     escrever("AH! É isso mesmo! Precisava fazer algumas tarefas de casa. Sua mãe precisou ir à cidade e deixou uma lista de afazeres para que ele terminasse antes de sua volta.", TEMPO_PADRAO)
     print("\n")
@@ -828,7 +821,5 @@ def fazenda():
             escrever("Opção inválida!", TEMPO_PADRAO)
             print("\n\n")
 
-
-fazenda()
-
-
+if __name__ == "__main__":
+    fazenda()
