@@ -11,12 +11,24 @@ tarefas = {
     "4": False
 }
 
-# --- FUNÇÕES UTILITÁRIAS ---
-
 def escrever(texto, tempo=TEMPO_PADRAO):
     """Escreve o texto com efeito de digitação suave no terminal."""
-    for letra in texto:
-        print(letra, end="", flush=True)
+    newtexto = ""
+    cont = 0
+    palavra = ""
+    for i in range(len(texto)):
+        cont+=1
+        palavra += texto[i]
+        if cont!=100 and (texto[i] == " " or i == len(texto)-1):
+            newtexto += palavra
+            palavra = ""
+        if cont==100:
+            newtexto += "\n"+palavra
+            palavra = ""
+            cont = 0
+
+    for i in range(len(newtexto)):
+        print(newtexto[i], end="", flush=True)
         time.sleep(tempo)
 
 # --- CENÁRIOS E AÇÕES DA HISTÓRIA ---
@@ -50,7 +62,9 @@ def segundo_andar():
             print("\n")
             machucado = ""
             while True:
-                machucado = input("1. Desistir e tentar entrar pelo porão.\n2. Tentar subir novamente, desta vez devagar")
+                print("1. Desistir e tentar entrar pelo porão.\n2. Tentar subir novamente, desta vez devagar")
+                machucado = input("Escolha uma opção: ")
+                print("\n")
                 
                 if machucado == "1":
                     porao()
@@ -339,14 +353,16 @@ def main():
     print("\n")
     escrever("Sua boca está seca, o controle está jogado no chão, mas ainda nauseado, começa a lembrar de alguma coisa que sua mãe havia pedido a ele", TEMPO_PADRAO)
     escrever("...", 2)
-    escrever(" AH! É isso mesmo! Precisava fazer algumas tarefas de casa. Sua mãe precisou ir à cidade e deixou uma lista de afazeres para que ele terminasse antes de sua volta.", TEMPO_PADRAO)
+    print("")
+    escrever("AH! É isso mesmo! Precisava fazer algumas tarefas de casa. Sua mãe precisou ir à cidade e deixou uma lista de afazeres para que ele terminasse antes de sua volta.", TEMPO_PADRAO)
     print("\n")
     escrever("A casa está silenciosa. Do lado de fora, é possível ouvir o vento passando pela plantação e alguns animais se movimentando ao longe.", TEMPO_PADRAO)
+    print("\n")
     lista_tarefas()
 
 def fazenda():
     while True:
-        texto = "A FAZENDA\n"
+        texto = "\033[1;32mThe mistery in the house\033[0m\n"
         jogar = "[(A) JOGAR]"
         sair = "[(S) SAIR ]"
         print(texto.center(50))
