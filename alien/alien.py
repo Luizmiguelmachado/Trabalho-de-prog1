@@ -1,7 +1,7 @@
 import time
 
 # Constantes e variáveis de estado global
-TEMPO_PADRAO = 0.07
+TEMPO_PADRAO = 0.7
 visitou_curral = 0
 
 tarefas = {
@@ -535,20 +535,164 @@ def convergencia_criatura():
     print("\n")
 
     while True:
-        print("1. Falar com a figura.\n2. Aproximar-se lentamente.\n3. Fugir.")
+        print("1. Falar com a figura.\n2. Fugir.")
         escolha = input("Escolha uma opção: ").strip()
         print("\n")
 
         if escolha == "1":
-            escrever("A criança tenta falar com a figura...", TEMPO_PADRAO)
+            falar_com_criatura()
+            break
+        elif escolha == "2":
+            escrever("A criança decide não arriscar e foge imediatamente em direção ao porão...", TEMPO_PADRAO)
+            print("\n")
+            perseguicao_porao()
+            break
+        else:
+            escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
+            print("\n\n")
+
+def falar_com_criatura():
+    escrever("A criança toma coragem e se aproxima para falar com a figura.", TEMPO_PADRAO)
+    print("\n")
+    escrever("Como você pretende se dirigir a ela?", TEMPO_PADRAO)
+    print("\n")
+    
+    while True:
+        print("1. Conversa amigável.\n2. Conversa agressiva.")
+        escolha = input("Escolha uma opção: ").strip()
+        print("\n")
+
+        if escolha == "1":
+            escrever("A criança fala com voz calma e gentil, cumprimentando a figura.", TEMPO_PADRAO)
+            print("\n")
+            escrever("A figura lentamente se vira e tira a peruca loira... É um ser extraterrestre de olhos grandes!", TEMPO_PADRAO)
+            print("\n")
+            escrever("Para a surpresa de todos, o alien responde com um tom pacífico.", TEMPO_PADRAO)
+            print("\n")
+            escrever("Vocês começam a conversar e passam horas trocando histórias.", TEMPO_PADRAO)
+            print("\n")
+            escrever("Rapidamente, vocês descobrem que têm muitos gostos em comum e se tornam grandes amigos!", TEMPO_PADRAO)
+            print("\n")
+            escrever("Agora, como melhores colegas, o alien decide morar escondido no seu quarto, ajudando nas tarefas e dividindo segredos do universo.", TEMPO_PADRAO)
+            print("\n")
+            escrever("FIM - O ALIEN É SEU NOVO COLEGA DE QUARTO!", TEMPO_PADRAO)
+            print("\n")
+            break
+
+        elif escolha == "2":
+            escrever("A criança se aproxima de forma intimidadora, fazendo questionamentos em tom agressivo e alto:", TEMPO_PADRAO)
+            print("\n")
+            escrever("“Quem é você?! O que está fazendo na minha casa com as roupas da minha mãe?!”", TEMPO_PADRAO)
+            print("\n")
+            escrever("A figura se assusta tremendamente com a abordagem rude!", TEMPO_PADRAO)
+            print("\n")
+            escrever("Ela se levanta num pulo, revelando ser um alienígena horrorizado e com medo.", TEMPO_PADRAO)
+            print("\n")
+            escrever("Em pânico, o alien vira as costas e sai correndo desajeitadamente com os saltos altos alto:", TEMPO_PADRAO)
+            print("\n")
+            escrever("TOC! TOC! TOC! TOC!", TEMPO_PADRAO)
+            print("\n")
+            escrever("Ele corre direto em direção ao porão!", TEMPO_PADRAO)
+            print("\n")
+            perseguicao_porao()
+            break
+        else:
+            escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
+            print("\n\n")
+
+def perseguicao_porao():
+    escrever("O alien desce as escadas do porão em disparada, chegando primeiro que você.", TEMPO_PADRAO)
+    print("\n")
+    escrever("Quando você finalmente alcança o porão, vê uma cena inacreditável:", TEMPO_PADRAO)
+    print("\n")
+    escrever("Uma pequena nave espacial reluzente está estacionada no meio do porão.", TEMPO_PADRAO)
+    print("\n")
+    escrever("A nave é tão pequena que cabe apenas o alien no banco do piloto e uma vaca enfiada no porta-malas!", TEMPO_PADRAO)
+    print("\n")
+    escrever("“Minha vaca!” — você pensa indignado ao ver o animal no porta-malas.", TEMPO_PADRAO)
+    print("\n")
+    escrever("O alien rapidamente entra na nave e começa a fechar as portas e ligar os motores.", TEMPO_PADRAO)
+    print("\n")
+
+    while True:
+        print("1. Invadir pela porta da nave e lutar pela sua vaca.\n2. Ficar parado olhando.")
+        escolha = input("Escolha uma opção: ").strip()
+        print("\n")
+
+        if escolha == "1" or escolha == "2":
+            escrever("Você se lança contra a porta da nave antes que ela se sele completamente e tenta resgatar sua vaca!", TEMPO_PADRAO)
+            print("\n")
+            escrever("Uma luta desesperada começa, mas a tecnologia alienígena e a força da nave em decolagem são demais para você.", TEMPO_PADRAO)
+            print("\n")
+            escrever("Você falha na luta e começa a escorregar para fora enquanto a nave levanta voo dentro do porão!", TEMPO_PADRAO)
+            print("\n")
+            lutar_pela_vaca_falha()
+            break
+        else:
+            escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
+            print("\n\n")
+
+def lutar_pela_vaca_falha():
+    while True:
+        print("1. Tentar se agarrar a algo.\n2. Soltar-se imediatamente.")
+        escolha = input("Escolha uma opção: ").strip()
+        print("\n")
+
+        if escolha == "1":
+            escrever("Em um gesto de desespero, você estica a mão e tenta se agarrar a qualquer coisa que veja pela frente...", TEMPO_PADRAO)
+            print("\n")
+            escrever("A única coisa que seus dedos conseguem alcançar é... uma BANANA que estava jogada perto do painel da nave!", TEMPO_PADRAO)
+            print("\n")
+            escrever("Você segura a banana, mas a força da aceleração faz você despencar da nave!", TEMPO_PADRAO)
+            print("\n")
+            escrever("Você cai rolando no chão do porão enquanto a nave alienígena rompe o teto e foge pelo céu com a sua vaca!", TEMPO_PADRAO)
+            print("\n")
+            opcao_banana()
+            break
+        elif escolha == "2":
+            escrever("Você se solta e cai no chão do porão.", TEMPO_PADRAO)
+            print("\n")
+            escrever("A nave alienígena acelera, rompe o teto do porão e foge em disparada para o espaço levando sua vaca!", TEMPO_PADRAO)
+            print("\n")
+            escrever("Você observa a nave sumir no céu, derrotado e sem a vaca.", TEMPO_PADRAO)
+            print("\n")
+            escrever("FIM DE JOGO - O ALIEN FUGIU!", TEMPO_PADRAO)
+            print("\n")
+            break
+        else:
+            escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
+            print("\n\n")
+
+def opcao_banana():
+    escrever("Você está caído no chão do porão segurando uma banana perfeitamente amarela.", TEMPO_PADRAO)
+    print("\n")
+    
+    while True:
+        print("1. Comer a banana.\n2. Deixar a banana de lado.")
+        escolha = input("Escolha uma opção: ").strip()
+        print("\n")
+
+        if escolha == "1":
+            escrever("Você descasca e come a banana...", TEMPO_PADRAO)
+            print("\n")
+            escrever("De repente, uma sensação estranha toma conta do seu corpo!", TEMPO_PADRAO)
+            print("\n")
+            escrever("Sua pele começa a ficar amarela, seus olhos ganham óculos redondos e grossos, e você encolhe!", TEMPO_PADRAO)
+            print("\n")
+            escrever("VOCÊ SE TRANSFORMOU EM UM MINION!", TEMPO_PADRAO)
+            print("\n")
+            
+            # Fala em minion em amarelo
+            TEXTO_AMARELO = "\033[1;33mBello! Me paolala po ka malaca ac bolaca, tulaliloo banana ac bee-do burilo papoia maka racuna tralala me muak lua, ac tula morilar papoia. No se bichuu dis hahaha biruu palala. Pwede... BANANA!\033[0m\n"
+            escrever(TEXTO_AMARELO, TEMPO_PADRAO)
             print("\n")
             break
         elif escolha == "2":
-            escrever("A criança se aproxima lentamente...", TEMPO_PADRAO)
+            escrever("Você decide não comer a banana e guarda ela no bolso.", TEMPO_PADRAO)
             print("\n")
-            break
-        elif escolha == "3":
-            escrever("A criança tenta fugir...", TEMPO_PADRAO)
+            escrever("Mesmo com a banana guardada, a nave alienígena já sumiu no horizonte com a vaca.", TEMPO_PADRAO)
+            print("\n")
+            escrever("FIM DE JOGO - O ALIEN FUGIU COM A SUA VACA!", TEMPO_PADRAO)
             print("\n")
             break
         else:
