@@ -1,7 +1,7 @@
 import time
 
-# Constantes e variáveis de estado global
-TEMPO_PADRAO = 0.01
+# Constantes globais
+TEMPO_PADRAO = 0.07
 visitou_curral = 0
 arma = ""
 
@@ -13,7 +13,7 @@ tarefas = {
 }
 
 def escrever(texto, tempo=TEMPO_PADRAO):
-    """Escreve o texto com efeito de digitação suave no terminal."""
+    #Escreve o texto com efeito de digitação no terminal
     newtexto = ""
     cont = 0
     palavra = ""
@@ -32,7 +32,7 @@ def escrever(texto, tempo=TEMPO_PADRAO):
         print(newtexto[i], end="", flush=True)
         time.sleep(tempo)
 
-# --- CENÁRIOS E AÇÕES DA HISTÓRIA ---
+#CENÁRIOS E AÇÕES DA HISTÓRIA
 
 def janela():
     global arma
@@ -82,7 +82,7 @@ def janela():
             escrever("Ele observa as portas dos quartos e tenta localizar a origem dos ruídos.", TEMPO_PADRAO)
             print("")
             escrever("Entretanto, pisa em uma madeira solta do assoalho.", TEMPO_PADRAO)
-            escrever("CRÉÉÉÉC...", 2)
+            escrever(" CRÉÉÉÉC...", 1)
             print("\n")
             escrever("A madeira range alto.", TEMPO_PADRAO)
             print("")
@@ -103,14 +103,13 @@ def janela():
             escrever("Ele conhece bem os quartos da casa e sabe onde procurar.", TEMPO_PADRAO)
             print("\n")
 
-            print("“Mas aonde eu devo procurar?“")
-            print("")
-            print("1 - Entrar no quarto da mãe.")
-            print("2 - Entrar no próprio quarto.")
-            print("3 - Descer sem pegar nada.")
-            print("")
-
             while True:
+                print("“Mas por onde devo começar?“")
+                print("")
+                print("1 - Entrar no quarto da mãe.")
+                print("2 - Entrar no próprio quarto.")
+                print("3 - Descer sem pegar nada.")
+                print("")
                 escolha = input("Escolha uma opção: ")
 
                 if escolha == "1":
@@ -153,6 +152,8 @@ def janela():
                     print("")
                     print("Essa não é uma opção válida. Escolha 1, 2 ou 3.")
                     print("")
+
+            break
         else:
             print("Digite uma opção válida.")
 
@@ -185,7 +186,7 @@ def janela():
             break
 
         elif escolha == "2":
-            quartos()
+            sala()
             break
 
         elif escolha == "3":
@@ -285,7 +286,7 @@ def segundo_andar():
         print("Será que devo... ")
         print("")
         while True:
-            print("1. Entrar imediatamente pela janela.\n2. Observar melhor a plantação.", TEMPO_PADRAO)
+            print("1. Entrar imediatamente pela janela.\n2. Observar melhor a plantação.")
             escolha = input("Escolha uma opção: ")
             if escolha == "1":
                 janela()
@@ -759,6 +760,7 @@ def convergencia_criatura():
                 print("")
                 escrever("Fim.", TEMPO_PADRAO)
                 print("")
+                break
         else:
             escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
             print("\n\n")
@@ -1131,7 +1133,6 @@ def lista_tarefas():
                 escrever("Tarefa inválida ou já concluída. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
                 print("\n\n")
 
-# --- FLUXO PRINCIPAL DO JOGO ---
 
 def main():
     escrever("É uma tarde comum em uma fazenda isolada no interior.", TEMPO_PADRAO)
