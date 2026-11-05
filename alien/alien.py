@@ -1,8 +1,9 @@
 import time
 
 # Constantes e variáveis de estado global
-TEMPO_PADRAO = 0.7
+TEMPO_PADRAO = 0.01
 visitou_curral = 0
+arma = ""
 
 tarefas = {
     "1": False,
@@ -33,43 +34,219 @@ def escrever(texto, tempo=TEMPO_PADRAO):
 
 # --- CENÁRIOS E AÇÕES DA HISTÓRIA ---
 
+def janela():
+    global arma
+
+    escrever("A criança abre a janela e entra no segundo andar.", TEMPO_PADRAO)
+    print("")
+    escrever("O quarto está silencioso.", TEMPO_PADRAO)
+    print("")
+    escrever("Ele se levanta e começa a caminhar pelo corredor, mas logo escuta um barulho vindo de outro cômodo", TEMPO_PADRAO)
+    escrever("...", 2)
+    print("\n")
+    escrever("Parece que alguma coisa acabou de cair no chão.", TEMPO_PADRAO)
+    escrever("...", 2)
+    print("\n")
+    escrever("Em seguida, ouve passos.", TEMPO_PADRAO)
+    print("")
+    escrever("Alguém está dentro da casa.", TEMPO_PADRAO)
+    print("\n")
+    print("Merda! Que #@$#@ é essa? O que eu faço?")
+    print("")
+    while True:
+        print("1. Ir rapidamente investigar.\n2. Caminhar devagar para não fazer barulho.\n3.Procurar alguma coisa para se defender.")
+        opcoes = input("Escolha uma opção: ")
+        if opcoes == "1":
+            escrever("A criança corre pelo corredor em direção ao barulho.", TEMPO_PADRAO)
+            print("")
+            escrever("Ao chegar perto de um dos quartos, vê uma figura usando o vestido da mãe.", TEMPO_PADRAO)
+            print("")
+            escrever("Ela está de costas.", TEMPO_PADRAO)
+            print("")
+            escrever("O cabelo loiro cobre seu rosto, e a figura parece estar procurando alguma coisa dentro de um armário.", TEMPO_PADRAO)
+            print("\n")
+            escrever("Antes que a criança consiga enxergar melhor, a figura se vira parcialmente.", TEMPO_PADRAO)
+            print("")
+            escrever("Ele não consegue distinguir seu rosto.", TEMPO_PADRAO)
+            escrever("...", 2)
+            print("\n")
+            escrever("A figura começa a andar pelo corredor.", TEMPO_PADRAO)
+            print("")
+            escrever("O som de seus sapatos de salto ecoa pela casa.", TEMPO_PADRAO)
+            print("\n")
+            break
+
+        elif opcoes == "2":
+            escrever("A criança avança pelo corredor, tentando não fazer barulho.", TEMPO_PADRAO)
+            print("")
+            escrever("Ele observa as portas dos quartos e tenta localizar a origem dos ruídos.", TEMPO_PADRAO)
+            print("")
+            escrever("Entretanto, pisa em uma madeira solta do assoalho.", TEMPO_PADRAO)
+            escrever("CRÉÉÉÉC...", 2)
+            print("\n")
+            escrever("A madeira range alto.", TEMPO_PADRAO)
+            print("")
+            escrever("Os passos param imediatamente.", TEMPO_PADRAO)
+            print("")
+            escrever("A criança fica imóvel.", TEMPO_PADRAO)
+            escrever("...", 3)
+            print("\n")
+            escrever("Depois de alguns segundos, ouve os passos se afastando.", TEMPO_PADRAO)
+            print("")
+            escrever("A figura parece ter percebido alguma coisa e decidiu mudar de lugar.", TEMPO_PADRAO)
+            print("\n")
+            break
+
+        elif opcoes == "3":
+            escrever("A criança pensa que talvez seja melhor encontrar alguma coisa para se defender antes que algo de ruim pudesse acontecer", TEMPO_PADRAO)
+            print("")
+            escrever("Ele conhece bem os quartos da casa e sabe onde procurar.", TEMPO_PADRAO)
+            print("\n")
+
+            print("“Mas aonde eu devo procurar?“")
+            print("")
+            print("1 - Entrar no quarto da mãe.")
+            print("2 - Entrar no próprio quarto.")
+            print("3 - Descer sem pegar nada.")
+            print("")
+
+            while True:
+                escolha = input("Escolha uma opção: ")
+
+                if escolha == "1":
+                    print("")
+                    escrever("A criança entra cuidadosamente no quarto da mãe.", TEMPO_PADRAO)
+                    print("")
+                    escrever("O ambiente parece normal, mas algumas gavetas estão abertas.", TEMPO_PADRAO)
+                    print("")
+                    escrever("Ele procura alguma coisa que possa usar para se defender...", TEMPO_PADRAO)
+                    print("\n")
+                    escrever("Depois de olhar ao redor, encontra um chinelo da mãe.", TEMPO_PADRAO)
+                    print("")
+                    escrever("Ele o segura, sem ter certeza de como aquilo poderia ajudá-lo.", TEMPO_PADRAO)
+                    print("")
+                    escrever("Apesar disso, sente-se um pouco mais preparado para continuar.", TEMPO_PADRAO)
+                    print("")
+
+                    arma = "chinela"
+                    break
+
+                elif escolha == "2":
+                    print("")
+                    escrever("A criança entra no próprio quarto e procura alguma coisa para se defender.", TEMPO_PADRAO)
+                    print("")
+                    escrever("Perto de um canto, encontra um bastão de beisebol.", TEMPO_PADRAO)
+                    print("")
+                    escrever("Ele o segura com as duas mãos.", TEMPO_PADRAO)
+                    print("")
+                    escrever("O objeto parece resistente, e a criança se sente mais confiante.", TEMPO_PADRAO)
+                    print("")
+                    
+                    arma = "taco"
+                    break
+
+                elif escolha == "3":
+                    print("")
+                    break
+
+                else:
+                    print("")
+                    print("Essa não é uma opção válida. Escolha 1, 2 ou 3.")
+                    print("")
+        else:
+            print("Digite uma opção válida.")
+
+    escrever("A criança decide que é melhor não perder tempo.", TEMPO_PADRAO)
+    print("")
+    escrever("Ele sai do corredor e começa a descer as escadas.", TEMPO_PADRAO)
+    print("")
+    escrever("Enquanto caminha, tenta imaginar onde a figura pode estar.", TEMPO_PADRAO)
+    escrever("...", 1)
+    print("\n")
+    escrever("Talvez esteja na cozinha.", TEMPO_PADRAO)
+    print("")
+    escrever("Talvez esteja na sala.", TEMPO_PADRAO)
+    print("")
+    escrever("Ou talvez tenha descido para o porão.", TEMPO_PADRAO)
+    print("")
+
+    while True:
+        print("O que a criança deve fazer?")
+        print("")
+        print("1 - Procurar na cozinha.")
+        print("2 - Procurar na sala.")
+        print("3 - Verificar a porta do porão.")
+        print("")
+
+        escolha = input("Escolha uma opção: ")
+
+        if escolha == "1":
+            cozinha()
+            break
+
+        elif escolha == "2":
+            quartos()
+            break
+
+        elif escolha == "3":
+            print("")
+            escrever("A criança se aproxima da porta do porão.", TEMPO_PADRAO)
+            print("")
+            escrever("Ela está fechada.", TEMPO_PADRAO)
+            print("")
+            escrever("Ele tenta se lembrar de ter ouvido algum barulho de porta abrindo ou fechando, mas não consegue se recordar de nada.", TEMPO_PADRAO)
+            print("")
+            escrever("Se a criatura tivesse descido, provavelmente teria feito algum barulho.", TEMPO_PADRAO)
+            print("")
+            escrever("A criança conclui que talvez ela ainda esteja em outro cômodo.", TEMPO_PADRAO)
+            print("")
+            escrever("Ele retorna à sala e encontra a figura na poltrona.", TEMPO_PADRAO)
+            print("")
+            convergencia_criatura()
+            break
+
+        else:
+            print("")
+            print("Essa não é uma opção válida. Escolha 1, 2 ou 3.")
+            print("\n")
+    
+
 def segundo_andar():
     print("\n")
     escrever("A criança se aproxima do cano que passa pela parede da casa.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Ele olha para cima e percebe que o cano chega perto da janela aberta do segundo andar.", TEMPO_PADRAO)
     print("")
     escrever("Não parece uma tarefa fácil, mas talvez seja a única maneira de entrar sem precisar quebrar nada.", TEMPO_PADRAO)
-    print("\n")
-    escrever("Bom, será que eu devo...", TEMPO_PADRAO)
     print("")
+    escrever("Bom, será que eu devo...", TEMPO_PADRAO)
+    print("\n")
     print("1. Subir rapidamente.\n2. Subir devagar")
-    
     escolha = ""
     while True:
-        escolha = input("Escolha uma opção: ").strip()
+        escolha = input("Escolha uma opção: ")
         print("\n")
         
         if escolha == "1":
             escrever("A criança começa a escalar o cano.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("No início, consegue subir alguns metros, mas logo percebe que está se esforçando demais.", TEMPO_PADRAO)
             print("\n")
             escrever("Seu pé escorrega. Ele tenta se segurar, mas perde o equilíbrio e cai.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("A queda provoca fortes dores, e ele permanece alguns instantes no chão, tentando recuperar o fôlego.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("Agora, está com medo de tentar novamente...", TEMPO_PADRAO)
             print("\n")
             machucado = ""
             while True:
                 print("1. Desistir e tentar entrar pelo porão.\n2. Tentar subir novamente, desta vez devagar")
-                machucado = input("Escolha uma opção: ").strip()
+                machucado = input("Escolha uma opção: ")
                 print("\n")
                 
                 if machucado == "1":
                     porao()
-                    return
+                    break
                 elif machucado == "2":
                     escolha = "2"
                     break
@@ -81,9 +258,9 @@ def segundo_andar():
             
         if escolha == "2":
             escrever("A criança segura o cano com firmeza e começa a subir cuidadosamente.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("Ele procura apoiar os pés nos pontos em que consegue encontrar mais estabilidade.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("A subida é demorada, mas, depois de algum esforço, consegue alcançar o telhado.", TEMPO_PADRAO)
             print("")
             escrever("Ele se senta por alguns instantes para recuperar o fôlego. Enfim, com um ultimo suspiro de força, ele chega até a janela aberta do segundo andar.", TEMPO_PADRAO)
@@ -92,7 +269,6 @@ def segundo_andar():
         if escolha not in ["1", "2"]:
             escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
             print("\n\n")
-
     if escolha == "2":
         print("\n")
         escrever("Do telhado, a criança consegue observar parte da propriedade.", TEMPO_PADRAO)
@@ -106,29 +282,35 @@ def segundo_andar():
         escrever("As plantas estão organizadas de uma maneira diferente em determinada área, formando um desenho que não parece ter sido feito naturalmente.", TEMPO_PADRAO)
         print("\n")
         escrever("Ele tenta entender o que está vendo, mas a distância dificulta a identificação.", TEMPO_PADRAO)
-        print("\n")
-        
+        print("Será que devo... ")
+        print("")
         while True:
-            print("1. Entrar imediatamente pela janela.\n2. Observar melhor a plantação.")
-            op = input("Escolha uma opção: ").strip()
-            print("\n")
-            if op in ["1", "2"]:
-                escrever("A criança decide entrar na casa pela janela do segundo andar...", TEMPO_PADRAO)
-                print("\n")
-                entrar_novamente_na_casa()
+            print("1. Entrar imediatamente pela janela.\n2. Observar melhor a plantação.", TEMPO_PADRAO)
+            escolha = input("Escolha uma opção: ")
+            if escolha == "1":
+                janela()
                 break
+            elif escolha == "2":
+                escrever("A criança se aproxima da borda do telhado e tenta enxergar o desenho com mais clareza.", TEMPO_PADRAO)
+                print("")
+                escrever("As plantas parecem formar um círculo irregular, com linhas que se estendem para diferentes direções.", TEMPO_PADRAO)
+                print("\n")
+                escrever("Ele se lembra de histórias sobre desenhos misteriosos encontrados em plantações, mas nunca imaginou encontrar algo parecido fora da ficção!", TEMPO_PADRAO)
+                print("")
+                
             else:
                 escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
                 print("\n\n")
+
 
 def observando_arredores():
     """Seção 7 - Opção de voltar a observar os arredores da casa."""
     escrever("A criança se afasta da porta e volta a olhar para os lados da casa.", TEMPO_PADRAO)
     print("\n")
     escrever("Ela percebe novamente as duas possibilidades de entrada.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Ao olhar para cima, vê o cano de escoamento próximo à janela do segundo andar.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Ao olhar para o outro lado, percebe novamente a porta do porão.", TEMPO_PADRAO)
     print("\n")
     
@@ -147,25 +329,25 @@ def observando_arredores():
             print("\n\n")
 
 def janela_porao():
-    """Seção 8 - A janela do porão."""
+
     escrever("A criança aproxima o rosto do vidro.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("O vidro está extremamente sujo e fosco.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Ela tenta limpar uma pequena parte com a mão, mas ainda não consegue enxergar através dele.", TEMPO_PADRAO)
     print("\n")
     escrever("Por alguns instantes, tudo o que consegue ver é uma imagem distorcida do interior.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Então, percebe algo.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Uma pequena luz verde aparece no fundo do porão.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A criança se aproxima ainda mais.", TEMPO_PADRAO)
     print("\n")
     escrever("“Hm... O que é aquilo?”", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A luz parece estar vindo de algum objeto escondido no interior.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Entretanto, a sujeira do vidro impede que ela veja o que realmente está acontecendo.", TEMPO_PADRAO)
     print("\n")
 
@@ -186,15 +368,15 @@ def janela_porao():
 def porao():
     """Seção 7 - A porta do porão."""
     escrever("Depois de observar os arredores da casa, a criança percebe a porta do porão.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Ela se aproxima e observa o local.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A porta parece antiga, mas não apresenta nenhum sinal de estar trancada.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Ao lado dela, há uma pequena janela.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("O vidro está sujo e fosco, dificultando a visão do interior.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A criança tenta descobrir o que existe lá dentro.", TEMPO_PADRAO)
     print("\n")
 
@@ -216,19 +398,16 @@ def porao():
             print("\n\n")
 
 def entrando_no_porao():
-    """Seção 9 - Entrando no porão."""
     escrever("Ela coloca a mão na maçaneta e gira.", TEMPO_PADRAO)
-    print("\n")
-    escrever("A porta se abre.", TEMPO_PADRAO)
-    print("\n")
-    escrever("O interior do porão está escuro e bagunçado.", TEMPO_PADRAO)
-    print("\n")
+    print("")
+    escrever("A porta se abre. O interior do porão está escuro e bagunçado.", TEMPO_PADRAO)
+    print("")
     escrever("Há caixas espalhadas pelo chão, objetos antigos e algumas estantes encostadas nas paredes.", TEMPO_PADRAO)
     print("\n")
     escrever("A criança olha para dentro.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("“Eu nunca tinha entrado aqui sozinho...”", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Apesar da bagunça, as escadas que levam para dentro da casa podem ser vistas ao fundo.", TEMPO_PADRAO)
     print("\n")
 
@@ -247,26 +426,23 @@ def entrando_no_porao():
             print("\n\n")
 
 def porta_para_dentro():
-    """Seção 10 - A porta para dentro da casa (trancada)."""
     escrever("Ela atravessa o porão e chega até as escadas.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("No final delas existe uma porta que leva para dentro da casa.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A criança segura a maçaneta e tenta abrir.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A maçaneta não gira.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Ele tenta novamente.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Nada.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A porta está trancada.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("“Droga...”", TEMPO_PADRAO)
-    print("\n")
-    escrever("A criança lembra que sua mãe costuma deixar uma chave no porão.", TEMPO_PADRAO)
-    print("\n")
-    escrever("Talvez ela esteja escondida em algum lugar entre aquelas coisas.", TEMPO_PADRAO)
+    print("")
+    escrever("A criança lembra que sua mãe costuma deixar uma chave no porão. Talvez ela esteja escondida em algum lugar entre aquelas coisas.", TEMPO_PADRAO)
     print("\n")
 
     while True:
@@ -281,7 +457,6 @@ def porta_para_dentro():
             print("\n\n")
 
 def vasculhando_porao():
-    """Seção 11 a 14 - Vasculhando as estantes do porão em busca da chave."""
     escrever("A criança decide procurar pela chave.", TEMPO_PADRAO)
     print("\n")
     escrever("O porão está cheio de objetos antigos e caixas espalhadas.", TEMPO_PADRAO)
@@ -305,12 +480,10 @@ def vasculhando_porao():
 
         if escolha == "1" and not estantes_visitadas["1"]:
             estantes_visitadas["1"] = True
-            escrever("A criança se aproxima da primeira estante.", TEMPO_PADRAO)
-            print("\n")
-            escrever("Há vários objetos antigos e caixas empilhadas.", TEMPO_PADRAO)
-            print("\n")
+            escrever("A criança se aproxima da primeira estante. Há vários objetos antigos e caixas empilhadas.", TEMPO_PADRAO)
+            print("")
             escrever("Ela começa a procurar entre as coisas.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("Depois de algum tempo, percebe que não há nenhuma chave ali.", TEMPO_PADRAO)
             print("\n")
             escrever("“Não está aqui...”", TEMPO_PADRAO)
@@ -318,68 +491,52 @@ def vasculhando_porao():
 
         elif escolha == "2" and not estantes_visitadas["2"]:
             estantes_visitadas["2"] = True
-            escrever("A criança se aproxima da segunda estante.", TEMPO_PADRAO)
-            print("\n")
-            escrever("Ela começa a retirar algumas coisas do caminho e procura cuidadosamente.", TEMPO_PADRAO)
-            print("\n")
+            escrever("A criança se aproxima da segunda estante. Ela começa a retirar algumas coisas do caminho e procura cuidadosamente.", TEMPO_PADRAO)
+            print("")
             escrever("Depois de alguns segundos, percebe que também não encontrou a chave.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("“Também não está aqui...”", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("De repente...", TEMPO_PADRAO)
             print("\n")
-            escrever("Toc... Toc...", TEMPO_PADRAO)
+            escrever("Troc... Troc...", TEMPO_PADRAO)
             print("\n")
             escrever("A criança para.", TEMPO_PADRAO)
-            print("\n")
-            escrever("Ela olha para cima.", TEMPO_PADRAO)
-            print("\n")
-            escrever("O som parece ter vindo do andar de cima.", TEMPO_PADRAO)
-            print("\n")
-            escrever("Por alguns segundos, tudo fica em silêncio.", TEMPO_PADRAO)
+            print("")
+            escrever("Ela olha para cima. O som parece ter vindo do andar de cima. Por alguns segundos, tudo fica em silêncio.", TEMPO_PADRAO)
             print("\n")
             escrever("Então...", TEMPO_PADRAO)
             print("\n")
-            escrever("Toc... Toc...", TEMPO_PADRAO)
+            escrever("Troc... Troc...", TEMPO_PADRAO)
             print("\n")
-            escrever("Dessa vez, o som parece ainda mais claro.", TEMPO_PADRAO)
-            print("\n")
-            escrever("São passos.", TEMPO_PADRAO)
-            print("\n")
+            escrever("Dessa vez, o som parece ainda mais claro. São passos...", TEMPO_PADRAO)
+            print("")
             escrever("Mas não são passos comuns.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("O som lembra o de um salto batendo contra o chão.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("A criança fica imóvel.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("“Ué...”", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("Ela olha para a porta que leva para dentro da casa.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("“Eu deveria estar sozinho...”", TEMPO_PADRAO)
-            print("\n")
+            print("")
 
         elif escolha == "3" and not estantes_visitadas["3"]:
             estantes_visitadas["3"] = True
-            escrever("A criança decide continuar procurando.", TEMPO_PADRAO)
-            print("\n")
-            escrever("Ela se aproxima da terceira estante.", TEMPO_PADRAO)
-            print("\n")
+            escrever("A criança decide continuar procurando. Ela se aproxima da terceira estante.", TEMPO_PADRAO)
+            print("")
             escrever("Entre algumas caixas e objetos antigos, encontra algo metálico.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("Ele puxa o objeto para fora.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("É uma chave.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("“Achei!”", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("A criança segura a chave e olha novamente para a porta.", TEMPO_PADRAO)
-            print("\n")
-            escrever("Por alguns instantes, pensa nos passos que ouviu.", TEMPO_PADRAO)
-            print("\n")
-            escrever("Toc... Toc...", TEMPO_PADRAO)
-            print("\n")
-            escrever("Nenhum outro som é ouvido.", TEMPO_PADRAO)
             print("\n")
             entrar_novamente_na_casa()
             break
@@ -388,37 +545,29 @@ def vasculhando_porao():
             print("\n\n")
 
 def entrar_novamente_na_casa():
-    """Seção 15 - Entrando novamente na casa."""
     escrever("A criança coloca a chave na fechadura.", TEMPO_PADRAO)
     print("\n")
     escrever("Clac.", TEMPO_PADRAO)
     print("\n")
     escrever("A porta destranca.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Ele gira a maçaneta lentamente.", TEMPO_PADRAO)
-    print("\n")
-    escrever("A porta se abre.", TEMPO_PADRAO)
-    print("\n")
-    escrever("A criança entra na casa.", TEMPO_PADRAO)
-    print("\n")
-    escrever("O ambiente parece silencioso.", TEMPO_PADRAO)
-    print("\n")
-    escrever("Por alguns segundos, tudo parece normal.", TEMPO_PADRAO)
-    print("\n")
+    print("")
+    escrever("A porta se abre e a criança entra na casa.", TEMPO_PADRAO)
+    print("")
+    escrever("O ambiente parece silencioso, por alguns segundos, tudo parece normal.", TEMPO_PADRAO)
+    print("")
     escrever("Mas ele ainda se lembra dos passos que ouviu no andar de cima.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Talvez tivesse sido apenas alguma coisa caindo.", TEMPO_PADRAO)
-    print("\n")
-    escrever("Ou talvez não.", TEMPO_PADRAO)
-    print("\n")
+    print("")
+    escrever("Ou talvez não...", TEMPO_PADRAO)
+    print("")
     escrever("A criança olha ao redor.", TEMPO_PADRAO)
     print("\n")
     investigando_a_casa()
 
-# --- PARTE 4: INVESTIGANDO A CASA ---
-
 def investigando_a_casa():
-    """Seção 16 - Procurando nos cômodos."""
     while True:
         print("1. Procurar na cozinha.\n2. Procurar na sala.\n3. Procurar nos quartos.")
         escolha = input("Escolha uma opção: ").strip()
@@ -438,77 +587,70 @@ def investigando_a_casa():
             print("\n\n")
 
 def cozinha():
-    """Seção 17 - A cozinha."""
     escrever("A criança entra cuidadosamente.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A pia está limpa, mas alguns objetos estão organizados de maneira estranha.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Os talheres estão empilhados sobre a mesa em fileiras muito precisas.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A criança observa por alguns segundos.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("“Minha mãe não deixa as coisas assim...”", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Antes que consiga investigar melhor, ouve um ruído vindo da sala.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A criança olha em direção à porta.", TEMPO_PADRAO)
-    print("\n")
-    escrever("Toc... Toc...", TEMPO_PADRAO)
-    print("\n")
+    print("")
+    escrever("Troc... Troc...", TEMPO_PADRAO)
+    print("")
     escrever("O som de passos de salto ecoa novamente pela casa.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A criança percebe que o som que ouviu no porão realmente vinha de alguém se movimentando pela casa.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Ela decide investigar a sala...", TEMPO_PADRAO)
     print("\n")
     convergencia_criatura()
 
 def sala():
-    """Seção 18 - A sala."""
     escrever("A criança entra lentamente.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A televisão está ligada.", TEMPO_PADRAO)
-    print("\n")
-    escrever("A sala parece estar vazia.", TEMPO_PADRAO)
-    print("\n")
-    escrever("Por alguns segundos, ele pensa que talvez não exista ninguém ali.", TEMPO_PADRAO)
-    print("\n")
-    escrever("Então percebe algo.", TEMPO_PADRAO)
-    print("\n")
+    print("")
+    escrever("A sala parece estar vazia. Por alguns segundos, ele pensa que talvez não exista ninguém ali até que percebe algo.", TEMPO_PADRAO)
+    print("")
     escrever("A poltrona da mãe está ocupada.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Há uma figura sentada nela.", TEMPO_PADRAO)
-    print("\n")
-    escrever("A pessoa está usando um vestido e uma peruca loira.", TEMPO_PADRAO)
-    print("\n")
+    print("")
+    escrever("Ela está usando um vestido e uma peruca loira.", TEMPO_PADRAO)
+    print("")
     escrever("A criança permanece parada.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Ela não consegue enxergar o rosto da figura.", TEMPO_PADRAO)
     print("\n")
     convergencia_criatura()
 
 def quartos():
-    """Seção 19 - Os quartos."""
     escrever("A criança entra no corredor.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("As portas dos quartos estão fechadas.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Ele começa a observar cada uma delas, tentando descobrir de onde vieram os passos.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Então escuta novamente:", TEMPO_PADRAO)
-    print("\n")
-    escrever("Toc... Toc...", TEMPO_PADRAO)
-    print("\n")
+    print("")
+    escrever("Troc... Troc...", TEMPO_PADRAO)
+    print("")
     escrever("Os passos vêm de algum lugar dentro da casa.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A criança fica imóvel.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Depois de alguns segundos, o som para.", TEMPO_PADRAO)
     print("\n")
 
     while True:
         print("1. Entrar no quarto da mãe.\n2. Entrar no próprio quarto.\n3. Voltar para o corredor.")
-        escolha = input("Escolha uma opção: ").strip()
+        escolha = input("Escolha uma opção: ")
         print("\n")
         if escolha in ["1", "2", "3"]:
             escrever("A criança tenta investigar os quartos, mas sente que precisa ir até a sala...", TEMPO_PADRAO)
@@ -520,22 +662,26 @@ def quartos():
             print("\n\n")
 
 def convergencia_criatura():
-    """Seção 20 - Convergência das rotas e encontro com a criatura."""
+    global arma
     escrever("A televisão continua ligada.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A figura permanece sentada na poltrona da mãe.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("O vestido parece grande demais para seu corpo.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A peruca loira cobre boa parte de seu rosto.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A criança percebe que existe alguma coisa muito errada.", TEMPO_PADRAO)
-    print("\n")
-    escrever("Ela não possui nenhum objeto para se defender.", TEMPO_PADRAO)
+    print("")
+    if arma == "":
+        escrever("Ela não possui nenhum objeto para se defender.", TEMPO_PADRAO)
     print("\n")
 
     while True:
         print("1. Falar com a figura.\n2. Fugir.")
+        if arma!= "":
+            print("3. Se aproximar da criatura com o objeto encontrado em mãos")
+
         escolha = input("Escolha uma opção: ").strip()
         print("\n")
 
@@ -547,6 +693,72 @@ def convergencia_criatura():
             print("\n")
             perseguicao_porao()
             break
+        elif escolha == "3" and arma!="":
+            if arma == "taco":
+                escrever("A criança segura o bastão e se aproxima.", TEMPO_PADRAO)
+                print("")
+                escrever("A criatura percebe a ameaça e tenta se afastar.", TEMPO_PADRAO)
+                print("")
+                escrever("A criança desfere um golpe, mas o bastão atinge a criatura e se parte ao meio", TEMPO_PADRAO)
+                print("")
+                escrever("O barulho ecoa pela sala", TEMPO_PADRAO)
+                escrever("...", 1)
+                print("\n")
+                escrever("A criatura cai no chão, assustada, e a peruca se solta.", TEMPO_PADRAO)
+                print("")
+                escrever("A criança finalmente vê sua verdadeira aparência.", TEMPO_PADRAO)
+                escrever("...", 2)
+                print("\n")
+                escrever("“Meu Deus! É um ALIENÍGENA!“", TEMPO_PADRAO)
+                print("")
+                escrever("A criança se assusta e foge imediatamente em direção ao porão.")
+                print("\n")
+                perseguicao_porao()
+                break
+            if arma == "chinela":
+                escrever("A criança se aproxima segurando o chinelo.", TEMPO_PADRAO)
+                print("")
+                escrever("A criatura tenta recuar, mas ele acaba acertando sua cabeça.", TEMPO_PADRAO)
+                print("")
+                escrever("O alienígena cai no chão e começa a se contorcer de dor.", TEMPO_PADRAO)
+                print("")
+                escrever("A peruca loira se solta.", TEMPO_PADRAO)
+                print("")
+                escrever("A criança percebe que a figura não é humana.", TEMPO_PADRAO)
+                print("")
+                escrever("“Meu Deus! É um ALIENÍGENA!“", TEMPO_PADRAO)
+                escrever("...", 2)
+                print("\n")
+                escrever("A criatura olha para a criança com medo, como se nunca tivesse imaginado que um ser tão pequeno pudesse representar uma ameaça.", TEMPO_PADRAO)
+                print("")
+                escrever("A criatura olha para a criança em silêncio.", TEMPO_PADRAO)
+                print("")
+                escrever("Seus olhos percorrem o pequeno ser à sua frente.", TEMPO_PADRAO)
+                print("")
+                escrever("Então, finalmente, parece compreender o que aconteceu.", TEMPO_PADRAO)
+                escrever("...", 1)
+                print("\n")
+                escrever("Aquele ser pequeno havia conseguido derrotá-la.", TEMPO_PADRAO)
+                print("")
+                escrever("Para a criatura, aquilo só podia significar uma coisa.", TEMPO_PADRAO)
+                print("")
+                escrever("A criança não era uma simples criança.", TEMPO_PADRAO)
+                print("")
+                escrever("Era um ser de poder inimaginável.", TEMPO_PADRAO)
+                escrever("...", 2)
+                print("\n")
+                escrever("O alienígena se ajoelha diante dela.", TEMPO_PADRAO)
+                print("")
+                escrever("A partir daquele momento, reconhece sua completa inferioridade.", TEMPO_PADRAO)
+                print("")
+                escrever("Ele ergue as mãos e faz uma espécie de juramento.", TEMPO_PADRAO)
+                print("")
+                escrever("A criatura decide servir à criança pelo resto de sua existência.", TEMPO_PADRAO)
+                print("")
+                escrever("E assim começa a mais estranha amizade que aquela fazenda já conheceu.", TEMPO_PADRAO)
+                print("")
+                escrever("Fim.", TEMPO_PADRAO)
+                print("")
         else:
             escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
             print("\n\n")
@@ -604,33 +816,24 @@ def perseguicao_porao():
     escrever("O alien desce as escadas do porão em disparada, chegando primeiro que você.", TEMPO_PADRAO)
     print("\n")
     escrever("Quando você finalmente alcança o porão, vê uma cena inacreditável:", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("Uma pequena nave espacial reluzente está estacionada no meio do porão.", TEMPO_PADRAO)
-    print("\n")
+    print("")
     escrever("A nave é tão pequena que cabe apenas o alien no banco do piloto e uma vaca enfiada no porta-malas!", TEMPO_PADRAO)
+    print("")
+    escrever("“EI! Essa é a minha vaca!” — você pensa indignado ao ver o animal no porta-malas.", TEMPO_PADRAO)
+    print("")
+    escrever("O alien rapidamente entra na nave, começa a fechar as portas e ligar os motores.", TEMPO_PADRAO)
     print("\n")
-    escrever("“Minha vaca!” — você pensa indignado ao ver o animal no porta-malas.", TEMPO_PADRAO)
+    
+    escrever("Você se lança contra a porta da nave antes que ela se sele completamente e tenta resgatar sua vaca!", TEMPO_PADRAO)
+    print("")
+    escrever("Uma luta desesperada começa, mas a tecnologia alienígena e a força da nave em decolagem são demais para você.", TEMPO_PADRAO)
+    print("")
+    escrever("Você falha na luta e começa a escorregar para fora enquanto a nave levanta voo dentro do porão!", TEMPO_PADRAO)
     print("\n")
-    escrever("O alien rapidamente entra na nave e começa a fechar as portas e ligar os motores.", TEMPO_PADRAO)
-    print("\n")
+    lutar_pela_vaca_falha()
 
-    while True:
-        print("1. Invadir pela porta da nave e lutar pela sua vaca.\n2. Ficar parado olhando.")
-        escolha = input("Escolha uma opção: ").strip()
-        print("\n")
-
-        if escolha == "1" or escolha == "2":
-            escrever("Você se lança contra a porta da nave antes que ela se sele completamente e tenta resgatar sua vaca!", TEMPO_PADRAO)
-            print("\n")
-            escrever("Uma luta desesperada começa, mas a tecnologia alienígena e a força da nave em decolagem são demais para você.", TEMPO_PADRAO)
-            print("\n")
-            escrever("Você falha na luta e começa a escorregar para fora enquanto a nave levanta voo dentro do porão!", TEMPO_PADRAO)
-            print("\n")
-            lutar_pela_vaca_falha()
-            break
-        else:
-            escrever("Opção inválida. Por favor, escolha uma opção válida.", TEMPO_PADRAO)
-            print("\n\n")
 
 def lutar_pela_vaca_falha():
     while True:
@@ -640,20 +843,20 @@ def lutar_pela_vaca_falha():
 
         if escolha == "1":
             escrever("Em um gesto de desespero, você estica a mão e tenta se agarrar a qualquer coisa que veja pela frente...", TEMPO_PADRAO)
-            print("\n")
-            escrever("A única coisa que seus dedos conseguem alcançar é... uma BANANA que estava jogada perto do painel da nave!", TEMPO_PADRAO)
-            print("\n")
+            print("")
+            escrever("A única coisa que seus dedos conseguem alcançar é... Uma BANANA que estava jogada perto do painel da nave!", TEMPO_PADRAO)
+            print("")
             escrever("Você segura a banana, mas a força da aceleração faz você despencar da nave!", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("Você cai rolando no chão do porão enquanto a nave alienígena rompe o teto e foge pelo céu com a sua vaca!", TEMPO_PADRAO)
             print("\n")
             opcao_banana()
             break
         elif escolha == "2":
             escrever("Você se solta e cai no chão do porão.", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("A nave alienígena acelera, rompe o teto do porão e foge em disparada para o espaço levando sua vaca!", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("Você observa a nave sumir no céu, derrotado e sem a vaca.", TEMPO_PADRAO)
             print("\n")
             escrever("FIM DE JOGO - O ALIEN FUGIU!", TEMPO_PADRAO)
@@ -673,18 +876,20 @@ def opcao_banana():
         print("\n")
 
         if escolha == "1":
-            escrever("Você descasca e come a banana...", TEMPO_PADRAO)
-            print("\n")
+            escrever("Você descasca e come a banana", TEMPO_PADRAO)
+            escrever("...", 2)
+            print("")
             escrever("De repente, uma sensação estranha toma conta do seu corpo!", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("Sua pele começa a ficar amarela, seus olhos ganham óculos redondos e grossos, e você encolhe!", TEMPO_PADRAO)
-            print("\n")
+            print("")
             escrever("VOCÊ SE TRANSFORMOU EM UM MINION!", TEMPO_PADRAO)
             print("\n")
             
             # Fala em minion em amarelo
             TEXTO_AMARELO = "\033[1;33mBello! Me paolala po ka malaca ac bolaca, tulaliloo banana ac bee-do burilo papoia maka racuna tralala me muak lua, ac tula morilar papoia. No se bichuu dis hahaha biruu palala. Pwede... BANANA!\033[0m\n"
             escrever(TEXTO_AMARELO, TEMPO_PADRAO)
+            print("\nTalvez não fosse uma boa opção comer frutas extraterrestres...")
             print("\n")
             break
         elif escolha == "2":
@@ -948,8 +1153,8 @@ def fazenda():
         jogar = "[(A) JOGAR]"
         sair = "[(S) SAIR ]"
         print(texto.center(50))
-        print(jogar.center(50))
-        print(sair.center(50))
+        print("\t", jogar)
+        print("\t", sair)
         escolha = input("Escolha uma opção: ").strip().upper()
 
         if escolha == "A":
@@ -965,5 +1170,4 @@ def fazenda():
             escrever("Opção inválida!", TEMPO_PADRAO)
             print("\n\n")
 
-if __name__ == "__main__":
-    fazenda()
+fazenda()
